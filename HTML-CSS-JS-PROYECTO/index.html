@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"/>
+  <title>TODO API — Crear y Obtener todos</title>
+  <link rel="stylesheet" href="css/stylesIndex.css">
+    <link rel="stylesheet" href="css/responsivePage.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="main-container">
+
+        <h2 class="main-title">TODO API by Juansegaliz y Arévalo</h2>
+
+        <div class="child-container">
+            <div class="menu-item">
+                <button class="bttn-menu-item">Crear TODO</button>
+                <div class="menu-content">
+                    <input id="create-title" placeholder="Titulo">
+
+                    <input id="create-desc" placeholder="Descripcion">
+
+                    <select id="create-completed">
+                        <option value="false" selected>No completado</option>
+                        <option value="true">Completado</option>
+                    </select>
+
+                    <select id="create-priority">
+                        <option value="1" selected>Baja</option>
+                        <option value="2" >Media</option>
+                        <option value="3">Alta</option>
+                    </select>
+
+                    <button id="btn-create" class="bttn-general">Crear</button>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <button class="bttn-menu-item">Actualizar TODO</button>
+                <div class="menu-content">
+                    <input id="update-id" placeholder="ID">
+
+                    <input id="update-title" placeholder="Nuevo Titulo">
+
+                    <input id="update-desc" placeholder="Nueva Descripcion">
+
+                    <select id="update-completed">
+                        <option value="false" selected>No completado</option>
+                        <option value="true">Completado</option>
+                    </select>
+
+                    <select id="update-priority">
+                        <option value="1" selected>Baja</option>
+                        <option value="2" >Media</option>
+                        <option value="3">Alta</option>
+                    </select>
+
+                    <button id="btn-update" class="bttn-general">Actualizar</button>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <button class="bttn-menu-item">Eliminar TODO</button>
+                <div class="menu-content">
+                    <input type="number" id="delete-id" placeholder="ID a Borrar"/>
+
+                    <button id="btn-delete" class="bttn-general">Eliminar</button>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <button class="bttn-menu-item">Consultar TODO</button>
+                <div class="menu-content">
+                    <input type="number" id="get-id" placeholder="ID a Consultar" />
+                    <button id="btn-get-id" class="bttn-general">Consultar</button>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- JSON -->
+        <button  id="bttn-get-all-data" class="bttn-general">Obtener Lista Completa TODOs</button>
+
+        <pre id="output"></pre>
+    </div>
+
+<script src="js/javaScript.js"></script>
+</body>
+</html>
