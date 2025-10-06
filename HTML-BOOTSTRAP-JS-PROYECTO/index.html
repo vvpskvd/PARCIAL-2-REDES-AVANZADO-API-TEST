@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"/>
+  <title>TODO API — Crear y Obtener todos</title>
+  
+  <!-- Bootstrap -->
+  <link 
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" 
+    rel="stylesheet">
+</head>
+
+<body class="bg-light">
+
+  <div class="container py-5">
+
+    <h2 class="text-center mb-5">TODO API by Juansegaliz y Arévalo</h2>
+
+    <div class="row g-4">
+      
+        <div class="col-md-6">
+            <div class="card shadow-sm">
+                <div class="card-header bg-primary text-white">
+                    Crear TODO
+                </div>
+
+                <div class="card-body">
+                    <div class="mb-3">
+                        <input id="create-title" class="form-control" placeholder="Titulo">
+                    </div>
+
+                    <div class="mb-3">
+                        <input id="create-desc" class="form-control" placeholder="Descripcion">
+                    </div>
+
+                    <div class="mb-3">
+                        <select id="create-completed" class="form-select">
+                            <option value="false" selected>No completado</option>
+                            <option value="true">Completado</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <select id="create-priority" class="form-select">
+                            <option value="1" selected>Baja</option>
+                            <option value="2">Media</option>
+                            <option value="3">Alta</option>
+                        </select>
+                    </div>
+                    
+                    <button id="btn-create" class="btn btn-primary w-100">
+                        Crear
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card shadow-sm">
+                <div class="card-header bg-warning">
+                    Actualizar TODO
+                </div>
+
+                <div class="card-body">
+                    <div class="mb-3">
+                        <input id="update-id" class="form-control" placeholder="ID">
+                    </div>
+
+                    <div class="mb-3">
+                        <input id="update-title" class="form-control" placeholder="Nuevo Título">
+                    </div>
+                    <div class="mb-3">
+                        <input id="update-desc" class="form-control" placeholder="Nueva Descripción">
+                    </div>
+
+                    <div class="mb-3">
+                        <select id="update-completed" class="form-select">
+                            <option value="false" selected>No completado</option>
+                            <option value="true">Completado</option>
+                        </select>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <select id="update-priority" class="form-select">
+                            <option value="1" selected>Baja</option>
+                            <option value="2">Media</option>
+                            <option value="3">Alta</option>
+                        </select>
+                    </div>
+
+                    <button id="btn-update" class="btn btn-warning w-100">
+                        Actualizar
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card shadow-sm">
+                <div class="card-header bg-danger text-white">
+                    Eliminar TODO
+                </div>
+
+                <div class="card-body">
+                    <div class="mb-3">
+                        <input type="number" id="delete-id" class="form-control" placeholder="ID a Borrar">
+                    </div>
+
+                    <button id="btn-delete" class="btn btn-danger w-100">
+                        Eliminar
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card shadow-sm">
+                <div class="card-header bg-info text-white">
+                    Consultar TODO
+                </div>
+
+                <div class="card-body">
+                    <div class="mb-3">
+                        <input type="number" id="get-id" class="form-control" placeholder="ID a Consultar">
+                    </div>
+                    
+                    <button id="btn-get-id" class="btn btn-info w-100">
+                        Consultar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JSON -->
+    <div class="text-center mt-5">
+        <button id="bttn-get-all-data" class="btn btn-dark">
+            Obtener Lista Completa TODOs
+        </button>
+    </div>
+
+    <pre id="output" class="bg-white border p-3 mt-3 rounded"></pre>
+
+  </div>
+
+  <script src="js/javaScript.js"></script>
+</body>
+</html>

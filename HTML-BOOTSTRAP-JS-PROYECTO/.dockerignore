@@ -1,0 +1,17 @@
+# Node modules
+node_modules
+
+# Archivos de configuración de IDE
+.vscode
+.idea
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Carpetas que no van a producción
+tests
+docs
