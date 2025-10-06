@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"/>
+  <title>TODO API — Crear y Obtener todos</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --font-family-general: 'Open Sans', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-green-900 via-blue-900 to-red-900 min-h-screen flex items-center justify-center select-none font-sans">
+
+  <div class="max-w-full flex flex-col items-center flex-wrap border-4 border-black rounded-[25px] p-8 lg:p-12">
+
+    <h2 
+      class="text-black text-center mb-7" 
+      style="font-family: var(--font-family-general); font-size: clamp(24px, 2vw, 48px);"
+    >
+      TODO API by Juansegaliz y Arévalo
+    </h2>
+
+    <div class="flex flex-wrap items-center justify-center gap-11 mb-8">
+      
+
+      <div class="flex flex-col items-center menu-item">
+        <button 
+          class="bg-[#B6B09F] text-white font-semibold rounded-lg py-2.5 px-4 shadow-md hover:bg-[#9E9887] hover:-translate-y-1 hover:shadow-lg active:scale-95 transition-all" 
+          style="font-family: var(--font-family-general); font-size: clamp(12px, 2vw, 16px);"
+        >
+          Crear TODO
+        </button>
+        <div class="flex flex-col items-center gap-3 mt-5 max-h-0 overflow-hidden transition-[max-height] duration-400 ease-in-out menu-content">
+
+          <input 
+            id="create-title" 
+            placeholder="Titulo" 
+            class="w-56 p-2 border-2 border-gray-300 rounded-md focus:outline-none focus:border-[#B6B09F] focus:shadow-md" 
+            style="font-family: var(--font-family-general); font-size: clamp(10px, 2vw, 14px);"
+          >
+          <input 
+            id="create-desc" 
+            placeholder="Descripcion" 
+            class="w-56 p-2 border-2 border-gray-300 rounded-md focus:outline-none focus:border-[#B6B09F] focus:shadow-md" 
+            style="font-family: var(--font-family-general); font-size: clamp(10px, 2vw, 14px);"
+          >
+
+          <select 
+            id="create-completed" 
+            class="w-56 p-2 border-2 border-gray-300 rounded-md focus:outline-none focus:border-[#B6B09F] focus:shadow-md bg-white text-gray-400 italic"
+          >
+            <option value="false" selected>No completado</option>
+            <option value="true">Completado</option>
+          </select>
+
+          <select 
+            id="create-priority" 
+            class="w-56 p-2 border-2 border-gray-300 rounded-md focus:outline-none focus:border-[#B6B09F] focus:shadow-md bg-white text-gray-400 italic"
+          >
+            <option value="1" selected>Baja</option>
+            <option value="2">Media</option>
+            <option value="3">Alta</option>
+          </select>
+
+          <button 
+            id="btn-create" 
+            class="bg-black text-white font-semibold rounded-lg py-2.5 px-4 shadow-md hover:bg-[#8A0000] hover:-translate-y-1 hover:shadow-lg active:scale-95 transition-all" 
+            style="font-family: var(--font-family-general); font-size: clamp(12px, 2vw, 16px);"
+          >
+            Crear
+          </button>
+        </div>
+      </div>
+
+
+      <div class="flex flex-col items-center menu-item">
+        <button 
+          class="bg-[#B6B09F] text-white font-semibold rounded-lg py-2.5 px-4 shadow-md hover:bg-[#9E9887] hover:-translate-y-1 hover:shadow-lg active:scale-95 transition-all" 
+          style="font-family: var(--font-family-general); font-size: clamp(12px, 2vw, 16px);"
+        >
+          Actualizar TODO
+        </button>
+
+        <div class="flex flex-col items-center gap-3 mt-5 max-h-0 overflow-hidden transition-[max-height] duration-400 ease-in-out menu-content">
+          <input 
+            id="update-id" 
+            placeholder="ID" 
+            class="w-56 p-2 border-2 border-gray-300 rounded-md focus:outline-none focus:border-[#B6B09F] focus:shadow-md" 
+            style="font-family: var(--font-family-general); font-size: clamp(10px, 2vw, 14px);"
+          >
+          
+          <input 
+            id="update-title" 
+            placeholder="Nuevo Titulo" 
+            class="w-56 p-2 border-2 border-gray-300 rounded-md focus:outline-none focus:border-[#B6B09F] focus:shadow-md" 
+            style="font-family: var(--font-family-general); font-size: clamp(10px, 2vw, 14px);"
+          >
+          
+          <input 
+            id="update-desc" 
+            placeholder="Nueva Descripcion" 
+            class="w-56 p-2 border-2 border-gray-300 rounded-md focus:outline-none focus:border-[#B6B09F] focus:shadow-md" 
+            style="font-family: var(--font-family-general); font-size: clamp(10px, 2vw, 14px);"
+          >
+          
+          <select 
+            id="update-completed" 
+            class="w-56 p-2 border-2 border-gray-300 rounded-md focus:outline-none focus:border-[#B6B09F] focus:shadow-md bg-white text-gray-400 italic"
+          >
+            <option value="false" selected>No completado</option>
+            <option value="true">Completado</option>
+          </select>
+
+          <select 
+            id="update-priority" 
+            class="w-56 p-2 border-2 border-gray-300 rounded-md focus:outline-none focus:border-[#B6B09F] focus:shadow-md bg-white text-gray-400 italic"
+          >
+            <option value="1" selected>Baja</option>
+            <option value="2">Media</option>
+            <option value="3">Alta</option>
+          </select>
+
+          <button 
+            id="btn-update" 
+            class="bg-black text-white font-semibold rounded-lg py-2.5 px-4 shadow-md hover:bg-[#8A0000] hover:-translate-y-1 hover:shadow-lg active:scale-95 transition-all" 
+            style="font-family: var(--font-family-general); font-size: clamp(12px, 2vw, 16px);"
+          >
+            Actualizar
+          </button>
+        </div>
+      </div>
+
+
+      <div class="flex flex-col items-center menu-item">
+        <button 
+          class="bg-[#B6B09F] text-white font-semibold rounded-lg py-2.5 px-4 shadow-md hover:bg-[#9E9887] hover:-translate-y-1 hover:shadow-lg active:scale-95 transition-all" 
+          style="font-family: var(--font-family-general); font-size: clamp(12px, 2vw, 16px);"
+        >
+          Eliminar TODO
+        </button>
+
+        <div class="flex flex-col items-center gap-3 mt-5 max-h-0 overflow-hidden transition-[max-height] duration-400 ease-in-out menu-content">
+          <input type="number"
+            id="delete-id" 
+            placeholder="ID a Borrar"
+            class="w-56 p-2 border-2 border-gray-300 rounded-md focus:outline-none focus:border-[#B6B09F] focus:shadow-md"
+          >
+
+          <button 
+            id="btn-delete" 
+            class="bg-black text-white font-semibold rounded-lg py-2.5 px-4 shadow-md hover:bg-[#8A0000] hover:-translate-y-1 hover:shadow-lg active:scale-95 transition-all" 
+            style="font-family: var(--font-family-general); font-size: clamp(12px, 2vw, 16px);"
+          >
+            Eliminar
+          </button>
+        </div>
+      </div>
+
+
+      <div class="flex flex-col items-center menu-item">
+        <button 
+          class="bg-[#B6B09F] text-white font-semibold rounded-lg py-2.5 px-4 shadow-md hover:bg-[#9E9887] hover:-translate-y-1 hover:shadow-lg active:scale-95 transition-all" 
+          style="font-family: var(--font-family-general); font-size: clamp(12px, 2vw, 16px);"
+        >
+          Consultar TODO
+        </button>
+        <div class="flex flex-col items-center gap-3 mt-5 max-h-0 overflow-hidden transition-[max-height] duration-400 ease-in-out menu-content">
+          <input type="number" 
+            id="get-id" 
+            placeholder="ID a Consultar" 
+            class="w-56 p-2 border-2 border-gray-300 rounded-md focus:outline-none focus:border-[#B6B09F] focus:shadow-md"
+          >
+
+          <button 
+            id="btn-get-id" 
+            class="bg-black text-white font-semibold rounded-lg py-2.5 px-4 shadow-md hover:bg-[#8A0000] hover:-translate-y-1 hover:shadow-lg active:scale-95 transition-all" 
+            style="font-family: var(--font-family-general); font-size: clamp(12px, 2vw, 16px);"
+          >
+            Consultar
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+    <button 
+      id="bttn-get-all-data"
+      class="bg-black text-white font-semibold rounded-lg py-2.5 px-4 shadow-md hover:bg-[#8A0000] hover:-translate-y-1 hover:shadow-lg active:scale-95 transition-all mb-6" 
+      style="font-family: var(--font-family-general); font-size: clamp(12px, 2vw, 16px);"
+     >
+      Obtener Lista Completa TODOs
+    </button>
+
+    <pre 
+      id="output" 
+      class="w-[450px] h-[200px] overflow-auto border-4 border-black rounded-[25px] p-4 text-white font-sans lg:w-[500px] lg:h-[250px]"
+    ></pre>
+
+  </div>
+
+  <script src="js/javaScript.js"></script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+node_modules
+.vscode
+.idea
+.DS_Store
+Thumbs.db
+*.log
+src/           # Carpeta de Tailwind sin compilar
+tests
+docs
