@@ -1,0 +1,20 @@
+version: "3.9"
+
+services:
+  html-app:
+    build: ./HTML-CSS-JS-PROYECTO
+    container_name: html-app
+    ports:
+      - "8080:80"
+
+  bootstrap-app:
+    build: ./HTML-BOOTSTRAP-JS-PROYECTO
+    container_name: bootstrap-app
+    ports:
+      - "8081:80"
+
+  tailwind-app:
+    build: "./HTML-TAILWIND-JS PROYECTO"
+    container_name: tailwind-app
+    ports:
+      - "8082:80"
